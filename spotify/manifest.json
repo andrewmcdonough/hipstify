@@ -8,8 +8,13 @@
     },
     "SupportedLanguages": [
         "en"
-    ]
+    ],
     "RequiredPermissions": [
-        "http://localhost:3000"
-     ]
+      "https://www.googleapis.com",
+      "http://localhost",
+      "http://google.com",
+      "http://www.spartify.com",
+      "http://spotview.dev"
+
+    ]
 }
