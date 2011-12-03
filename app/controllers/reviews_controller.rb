@@ -1,8 +1,16 @@
 class ReviewsController < ApplicationController
 
   before_filter :load_blog
+
+  respond_to :json
+
   def index
-    @reviews = @blog.reviews
+    if @blog.nil?
+      @reviews = Review.all
+    else
+      @reviews = @blog.reviews
+    end
+    respond_with @reviews
   end
 
   def show
@@ -10,6 +18,6 @@ class ReviewsController < ApplicationController
   end
 
   def load_blog
-    @blog = Blog.find(params[:blog_id])
+    @blog = Blog.find(params[:blog_id]) if params[:blog_id]
   end
 end

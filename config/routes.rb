@@ -3,9 +3,9 @@ Spotview::Application.routes.draw do
   resources :blogs do
     resources :reviews
   end
-  resources :review
+  resources :reviews
   resources :recordings
-  resources :artist
+  resources :artists
 
   root :to => "blogs#index"
 
