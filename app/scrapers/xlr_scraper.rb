@@ -1,13 +1,14 @@
 require 'ostruct'
 
-class DrownedScraper
+class XlrScraper
 
   def scrape_list
-    fh = open("http://drownedinsound.com/releases/reviewed")
+    fh = open("http://www.xlr8r.com/reviews")
     doc = Nokogiri::XML(fh)
     list = []
-    doc.css("h4 a").each do |e|
-      url = "http://drownedinsound.com#{e["href"]}"
+    doc.css("h2.title").each do |e|
+      href = e.children.first["href"]
+      url = "http://www.xlr8r.com/#{href}"
       title = e.text
       list << {
         :url => url,

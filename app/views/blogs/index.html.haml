@@ -1,2 +1,5 @@
-- @blogs.each do |blog|
-  = link_to blog.title, [blog, :reviews]
+%h1
+  Music Blogs
+%ul
+  - @blogs.each do |blog|
+    %li= link_to blog.title, [blog, :reviews]

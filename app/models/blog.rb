@@ -3,7 +3,7 @@ class Blog < ActiveRecord::Base
   has_many :reviews
 
   def scraper
-    DrownedScraper.new
+    Class.const_get("#{short_name.classify}Scraper").new
   end
 
 
