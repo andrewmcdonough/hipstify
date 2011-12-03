@@ -1,0 +1,15 @@
+{
+    "BundleType": "Application",
+    "AppIcon": {
+        "18x18": "tutorial.png"
+    },
+    "AppName": {
+        "en": "spotview"
+    },
+    "SupportedLanguages": [
+        "en"
+    ]
+    "RequiredPermissions": [
+        "http://localhost:3000"
+     ]
+}
