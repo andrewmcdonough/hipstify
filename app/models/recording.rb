@@ -15,4 +15,10 @@ class Recording < ActiveRecord::Base
       puts "album not found"
     end
   end
+
+  def self.load_unspotified
+    Recording.where("spotify_uri IS NULL").each do |r|
+      r.load_spotify_uri
+    end
+  end
 end
