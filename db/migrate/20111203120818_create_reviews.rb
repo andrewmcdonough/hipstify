@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration
       t.references :recording
       t.float :rating
       t.float :normalized_rating
-      t.reference :blog
+      t.references :blog
 
       t.timestamps
     end
