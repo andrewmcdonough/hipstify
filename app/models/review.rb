@@ -7,9 +7,8 @@ class Review < ActiveRecord::Base
 
   attr_accessor :artist_name, :recording_name
 
-  delegate :name, :to => :recording, :prefix => true, :allow_nil => true
-  delegate :name, :to => :artist, :prefix => true, :allow_nil => true
-
+  #delegate :name, :to => :recording, :prefix => true, :allow_nil => true
+  #delegate :name, :to => :artist, :prefix => true, :allow_nil => true
 
   def scraper
     blog.scraper
@@ -21,7 +20,6 @@ class Review < ActiveRecord::Base
     self.rating = r.rating
     self.artist_name = r.artist
     self.recording_name = r.recording
-
     save
   end
 
@@ -35,9 +33,7 @@ class Review < ActiveRecord::Base
     (normalized_rating * 100).floor
   end
 
-
   def link_recording
-    puts "linking recording"
     artist = Artist.find_by_name(self.artist_name) || Artist.create!(:name => self.artist_name)
     self.recording = artist.recordings.where("name = ?", self.recording_name).try(:first) || artist.recordings.create!(:name => recording_name)
     self.recording.artist = artist
@@ -47,8 +43,8 @@ class Review < ActiveRecord::Base
     {
       id: id,
       rating: normalized_rating,
-      recording: recording_name,
-      artist: artist_name,
+      recording: recording.try(:name),
+      artist: artist.try(:name),
       blog_name: blog.title
     }
   end

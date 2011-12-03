@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
 
   before_filter :load_blog
 
-  respond_to :json
+  respond_to :json, :html
 
   def index
     if @blog.nil?
