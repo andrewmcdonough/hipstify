@@ -25,6 +25,8 @@ class DrownedScraper
     doc = Nokogiri::XML(fh)
     review.content = doc.css(".editorial").first.text
     review.rating = doc.css(".mark .value").first.text.to_f
+    review.artist = doc.css("h1.fn").children[0].text
+    review.recording = doc.css("h1.fn").children[3].text
     fh.close
     review
   end
