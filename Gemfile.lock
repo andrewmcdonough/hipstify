@@ -43,6 +43,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     mysql2 (0.2.17)
+    nokogiri (1.4.7)
     polyglot (0.3.3)
     rack (1.2.4)
     rack-mount (0.6.14)
@@ -91,5 +92,6 @@ PLATFORMS
 DEPENDENCIES
   haml
   mysql2 (~> 0.2.11)
+  nokogiri
   rails (= 3.0.10)
   rspec-rails (~> 2.6)

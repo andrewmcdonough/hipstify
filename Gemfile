@@ -7,7 +7,7 @@ gem 'rails', '3.0.10'
 
 gem 'mysql2', '~> 0.2.11'
 gem 'haml'
-
+gem 'nokogiri'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.6"
