@@ -1,0 +1,3 @@
+%ul
+  - @reviews.each do |review|
+    %li= link_to review.title, [review.blog, review]

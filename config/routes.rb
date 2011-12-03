@@ -1,6 +1,8 @@
 Spotview::Application.routes.draw do
 
-  resources :blogs
+  resources :blogs do
+    resources :reviews
+  end
   resources :review
   resources :recordings
   resources :artist

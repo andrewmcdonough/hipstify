@@ -15,7 +15,7 @@ class Blog < ActiveRecord::Base
     list = scraper.scrape_list
     list.each do |entry|
       title = entry[:title]
-      review = self.reviews.find_by_title(title) || Review.new
+      review = self.reviews.find_by_title(title) || self.reviews.build
       puts "saving title as #{title}"
       review.title = title
       review.url = entry[:url]
