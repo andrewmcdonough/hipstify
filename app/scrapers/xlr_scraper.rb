@@ -1,4 +1,5 @@
 require 'ostruct'
+require 'open-uri'
 
 class XlrScraper
 

@@ -1,4 +1,5 @@
 require 'ostruct'
+require 'open-uri'
 
 class DrownedScraper
 
@@ -29,6 +30,8 @@ class DrownedScraper
     review.recording = doc.css("h1.fn").children[3].text
     fh.close
     review
+  rescue
+    "whatever, it's a hack"
   end
 
 end

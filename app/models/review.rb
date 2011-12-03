@@ -24,8 +24,10 @@ class Review < ActiveRecord::Base
   end
 
   def normalize_rating
-    return unless blog.rating_out_of.present? && blog.rating_out_of > 0
+    return unless blog.rating_out_of.present? && blog.rating_out_of > 1
     self.normalized_rating = (rating / blog.rating_out_of)
+  rescue
+    "hackday, whatever"
   end
 
   def hundred_rating
@@ -42,11 +44,18 @@ class Review < ActiveRecord::Base
   def as_json(options)
     {
       id: id,
-      rating: normalized_rating,
+      rating: hundred_rating,
       recording: recording.try(:name),
       artist: artist.try(:name),
-      blog_name: blog.title
+      blog_title: blog.title,
+      artist_spotify_uri: artist.try(:spotify_uri),
+      recording_spotify_uri: recording.try(:spotify_uri),
     }
   end
 
+  def self.scrape_all
+    Review.all.each do |review|
+      review.scrape
+    end
+  end
 end

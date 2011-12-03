@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111203161915) do
+ActiveRecord::Schema.define(:version => 20111203220923) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
     t.string   "mbid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "spotify_uri"
   end
 
   create_table "blogs", :force => true do |t|
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20111203161915) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "spotify_uri"
   end
 
   create_table "reviews", :force => true do |t|

@@ -18,4 +18,10 @@ class Blog < ActiveRecord::Base
     end
   end
 
+  def self.scrape_all_lists
+    Blog.all.each do |blog|
+      blog.scrape_list
+    end
+  end
+
 end
