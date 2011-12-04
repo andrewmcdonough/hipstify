@@ -1,10 +1,10 @@
 {
     "BundleType": "Application",
     "AppIcon": {
-        "18x18": "tutorial.png"
+        "18x18": "sp://spotview/icon16.png"
     },
     "AppName": {
-        "en": "spotview"
+        "en": "Hipsify"
     },
     "SupportedLanguages": [
         "en"

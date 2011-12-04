@@ -1,0 +1,29 @@
+#header {
+  background-color: #fff;
+  text-align: center;
+}
+
+.listing th {
+  background-color: #ccc;
+  color: #333;
+}
+.listing tr:nth-child(even) {background-color: #444}
+.listing tr:nth-child(odd) {background-color: #333}
+
+.rating-red {
+  background-color: #cc3333;
+  color: #ffffff; padding:3px; width:20px; text-align: center;
+}
+.rating-yellow {
+  background-color: #cccc33;
+  color: #ffffff; padding:3px; width:20px; text-align: center;
+}
+.rating-green {
+  background-color: #33cc33;
+  color: #ffffff; padding:3px; width:20px; text-align: center;
+}
+.rating-black {
+  background-color: #333333;
+  color: #ffffff; padding:3px; width:20px; text-align: center;
+
+
