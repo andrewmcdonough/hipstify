@@ -1,0 +1,9 @@
+- @blogs.each do |blog|
+  .blog-image= image_tag "#{blog.short_name}.png", :class => "blog-dashboard"
+
+.arrows
+  = image_tag "arrows.png"
+
+.hipstify
+  %center
+    = link_to (image_tag "logo.png", :height => 200), blogs_path

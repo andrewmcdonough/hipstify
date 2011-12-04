@@ -7,6 +7,7 @@ Spotview::Application.routes.draw do
   resources :recordings
   resources :artists
 
+
   root :to => "blogs#index"
 
 end
