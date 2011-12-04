@@ -1,5 +1,2 @@
-%h1
-  Music Blogs
-%ul
-  - @blogs.each do |blog|
-    %li= link_to blog.title, [blog, :reviews]
+- @blogs.each do |blog|
+  .blog-image=link_to (image_tag "#{blog.short_name}.png"), [blog, :reviews]

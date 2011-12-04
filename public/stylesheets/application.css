@@ -11,11 +11,11 @@ h1 {
 }
 body {
   font-family: Helvetica, Arial;
+  background-image: url("/images/bg.png");
 }
 
 .rating {
   font-family: 'LeagueGothicRegular', Arial, sans-serif; letter-spacing: 0; font-weight: normal; line-height:1;
-  background-color: #333333;
   width: 30px;
   height: 30px;
 font-size:20px;
@@ -23,4 +23,26 @@ font-size:20px;
   text-align:center;
 color: #ffffff; 
   float:right;
+}
+
+#header {
+  padding-top:20px;
+  padding-bottom:20px;
+}
+
+.rating-red {
+  background-color: #cc3333;
+}
+
+.rating-yellow {
+  background-color: #cccc33;
+}
+.rating-green {
+  background-color: #33cc33;
+}
+
+
+.blog-image {
+  padding:10px;
+  float:left;
 }

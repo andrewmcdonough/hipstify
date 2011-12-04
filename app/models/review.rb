@@ -3,7 +3,7 @@ class Review < ActiveRecord::Base
   belongs_to :blog
   has_one :artist, :through => :recording
 
-  before_save :normalize_rating, :link_recording
+  before_save :normalize_rating
 
   attr_accessor :artist_name, :recording_name
 
@@ -20,7 +20,15 @@ class Review < ActiveRecord::Base
     self.rating = r.rating
     self.artist_name = r.artist
     self.recording_name = r.recording
+    self.link_recording
+    self.set_random_published_at
     save
+  rescue
+    "hackday, whatever"
+  end
+
+  def set_random_published_at
+    self.published_at = Time.now - (rand*100).floor.hours
   end
 
   def normalize_rating
@@ -50,7 +58,17 @@ class Review < ActiveRecord::Base
       blog_title: blog.title,
       artist_spotify_uri: artist.try(:spotify_uri),
       recording_spotify_uri: recording.try(:spotify_uri),
+      rating_color: rating_color
     }
+  end
+
+  def rating_color
+    case hundred_rating
+    when (0..49) then "red"
+    when (50..79) then "yellow"
+    when (80..100) then "green"
+    else "black"
+    end
   end
 
   def self.scrape_all

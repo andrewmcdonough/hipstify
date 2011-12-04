@@ -1,6 +1,6 @@
 .row
-  .span12
-    .rating
+  .span16
+    %div{:class => "rating rating-#{@review.rating_color}"}
       = @review.hundred_rating
     %h1= @review.title
     = link_to @review.url, @review.url

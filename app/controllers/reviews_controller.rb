@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
 
   def index
     if @blog.nil?
-      @reviews = Review.all
+      @reviews = Review.order("published_at asc")
     else
       @reviews = @blog.reviews
     end
